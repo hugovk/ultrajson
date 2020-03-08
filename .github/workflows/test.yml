@@ -63,4 +63,5 @@ jobs:
       - name: Tests
         shell: bash
         run: |
+          pip list
           pytest
