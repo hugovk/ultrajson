@@ -585,9 +585,12 @@ def test_decode_raises(test_input, expected):
 @pytest.mark.parametrize(
     "test_input",
     [
+        "1",
+        "2",
         "[" * (1024 * 1024),
         "{" * (1024 * 1024),
     ],
+    ids=["a","b","c","d"]
 )
 def test_long_input(test_input):
     pass
