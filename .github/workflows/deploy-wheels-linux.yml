@@ -66,14 +66,14 @@ jobs:
         path: dist/*.whl
 
     - name: Publish package to PyPI
-      if: github.event.action == 'published'
+      if: github.repository_owner == 'ultrajson' && github.event.action == 'published'
       env:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.pypi_password }}
       run: twine upload --skip-existing dist/*.whl
 
     - name: Publish package to TestPyPI
-      if: github.repository == 'ultrajson/ultrajson'
+      if: github.repository_owner == 'ultrajson'
       env:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.test_pypi_password }}
