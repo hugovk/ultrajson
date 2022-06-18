@@ -40,7 +40,7 @@ jobs:
         run: |
           git clean -Xfd
           python -m pip install --force-reinstall .
-          python -m pytest
+          python -m pytest -v
 
       - name: Test with coverage
         if: ${{ startsWith(matrix.os, 'ubuntu') && matrix.python-version == '3.9' }}
