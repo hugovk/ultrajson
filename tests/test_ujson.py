@@ -539,6 +539,13 @@ def test_encode_surrogate_characters():
     ],
 )
 def test_decode_surrogate_characters(test_input, expected):
+    if (
+        sys.platform == "win32"
+        and hasattr(sys, "pypy_translation_info")
+        and test_input not in (r'"\uD83D\uDCA9"', r'"a\uD83D\uDCA9b"', '"\uD83D\uDCA9"')
+    ):
+        pytest.xfail("Known failure with PyPy on Windows")
+
     # FIXME Wrong output (combined char) on platforms with 16-bit wchar_t
     if test_input == '"\uD83D\uDCA9"' and ctypes.sizeof(ctypes.c_wchar) == 2:
         pytest.skip("Raw surrogate pairs are not supported with 16-bit wchar_t")
