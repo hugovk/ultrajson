@@ -5,6 +5,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - ".github/workflows/deploy.yml"
   pull_request:
     paths:
       - ".github/workflows/deploy.yml"
@@ -45,7 +47,7 @@ jobs:
         # Options are supplied via environment variables:
         env:
           # Build separate wheels for macOS's different architectures.
-          CIBW_ARCHS_MACOS: "x86_64 arm64"
+          CIBW_ARCHS_MACOS: "x86_64 arm64 universal2"
           # Build only on Linux architectures that don't need qemu emulation.
           CIBW_ARCHS_LINUX: "x86_64 i686"
           # Run the test suite after each build.
