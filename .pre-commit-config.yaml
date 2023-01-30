@@ -1,12 +1,12 @@
 repos:
   - repo: https://github.com/asottile/pyupgrade
-    rev: v3.16.0
+    rev: v3.17.0
     hooks:
       - id: pyupgrade
         args: [--py38-plus]
 
   - repo: https://github.com/psf/black-pre-commit-mirror
-    rev: 24.4.2
+    rev: 24.8.0
     hooks:
       - id: black
         args: [--target-version=py38]
@@ -17,7 +17,7 @@ repos:
       - id: isort
 
   - repo: https://github.com/PyCQA/flake8
-    rev: 7.1.0
+    rev: 7.1.1
     hooks:
       - id: flake8
         additional_dependencies: [flake8-2020, flake8-implicit-str-concat]
@@ -39,10 +39,10 @@ repos:
       - id: trailing-whitespace
         exclude: "^.github/.*_TEMPLATE.md"
 
-  - repo: https://github.com/asottile/setup-cfg-fmt
-    rev: v2.5.0
+  - repo: https://github.com/abravalheri/validate-pyproject
+    rev: v0.19
     hooks:
-      - id: setup-cfg-fmt
-        args: [--include-version-classifiers, --max-py-version=3.13]
+      - id: validate-pyproject
+
 ci:
   autoupdate_schedule: quarterly
