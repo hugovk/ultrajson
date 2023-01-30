@@ -1,8 +1,45 @@
 [build-system]
-requires = ["setuptools>=42", "setuptools_scm[toml]>=3.4"]
+build-backend = "setuptools.build_meta"
+requires = [
+  "setuptools>=61.2",
+  "setuptools_scm[toml]>=3.4",
+]
+
+[project]
+name = "ujson"
+description = "Ultra fast JSON encoder and decoder for Python"
+readme = "README.md"
+authors = [{name = "Jonas Tarnstrom"}]
+requires-python = ">=3.7"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: C",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+dynamic = [
+  "version",
+]
+[project.urls]
+Download = "https://github.com/ultrajson/ultrajson"
+Homepage = "https://github.com/ultrajson/ultrajson"
+Source = "https://github.com/ultrajson/ultrajson"
+
 
 [tool.black]
 target_version = ["py38"]
 
 [tool.isort]
 profile = "black"
+
+[tool.setuptools]
+platforms = ["any"]
+license-files = ["LICENSE.txt"]
+include-package-data = false

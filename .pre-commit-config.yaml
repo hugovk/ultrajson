@@ -39,10 +39,15 @@ repos:
       - id: trailing-whitespace
         exclude: "^.github/.*_TEMPLATE.md"
 
-  - repo: https://github.com/asottile/setup-cfg-fmt
-    rev: v2.4.0
+  - repo: https://github.com/tox-dev/pyproject-fmt
+    rev: 0.6.0
     hooks:
-      - id: setup-cfg-fmt
-        args: [--include-version-classifiers, --max-py-version=3.12]
+      - id: pyproject-fmt
+
+  - repo: https://github.com/abravalheri/validate-pyproject
+    rev: v0.12.1
+    hooks:
+      - id: validate-pyproject
+
 ci:
   autoupdate_schedule: quarterly
