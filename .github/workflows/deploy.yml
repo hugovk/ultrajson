@@ -155,13 +155,12 @@ jobs:
           git tag
           python -m build --sdist
           twine check --strict dist/*
-          twine check --strict dist-wheels/*
 
       - name: Publish wheels to PyPI
         if: github.event.action == 'published'
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
-          packages-dir: dist-wheels/
+          packages-dir: dist/*.whl
 
       - name: Publish sdist to PyPI
         if: github.event.action == 'published'
@@ -174,7 +173,7 @@ jobs:
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           repository-url: https://test.pypi.org/legacy/
-          packages-dir: dist-wheels/
+          packages-dir: dist/*.tar.gz
 
       - name: Publish sdist to TestPyPI
         if: |
