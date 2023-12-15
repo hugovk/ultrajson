@@ -143,8 +143,12 @@ jobs:
       - name: Download wheels from build artifacts
         uses: actions/download-artifact@v4
         with:
-          name: wheels
-          path: dist-wheels/
+          path: all
+
+      - name: Merge files
+        run: |
+          mkdir dist
+          mv all/*/* dist/.
 
       - name: Build package
         run: |
