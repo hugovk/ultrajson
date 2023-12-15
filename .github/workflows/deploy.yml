@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - bump-upload-download-artifact
   pull_request:
     paths:
       - ".github/workflows/deploy.yml"
