@@ -52,6 +52,8 @@ jobs:
           # Run the test suite after each build.
           CIBW_TEST_REQUIRES: "pytest"
           CIBW_TEST_COMMAND: pytest {package}/tests
+          # arm64 wheels can be built on x86_64 but not tested. Silence the warning.
+          CIBW_TEST_SKIP: "*-macosx_arm64"
 
       - name: Upload as build artifacts
         uses: actions/upload-artifact@v4
