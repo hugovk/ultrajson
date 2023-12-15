@@ -56,7 +56,7 @@ jobs:
       - name: Upload as build artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: wheels
+          name: wheels-native-${{ matrix.os }}
           path: dist/*.whl
 
   build-QEMU-emulated-wheels:
@@ -113,7 +113,7 @@ jobs:
       - name: Upload as build artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: wheels
+          name: wheels-qemu-${{ matrix.python-version }}
           path: dist/*.whl
 
   build-sdist-and-upload:
