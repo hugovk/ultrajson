@@ -40,6 +40,10 @@ jobs:
         env:
           CFLAGS: '-DDEBUG'
 
+      - name: Test import ujson
+        run: |
+          python -c 'import ujson'
+
       - name: Tests
         run: |
           python -m pytest --capture=no
