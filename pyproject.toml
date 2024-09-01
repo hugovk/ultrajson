@@ -36,6 +36,9 @@ license-files = [ "LICENSE.txt" ]
 include-package-data = false
 
 [tool.setuptools_scm]
+version_file = "src/python/version.h"
+version_file_template = '#define UJSON_VERSION "{version}"'
+local_scheme = "no-local-version"
 
 [tool.black]
 target_version = [ "py38" ]

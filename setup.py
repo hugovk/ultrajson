@@ -50,9 +50,4 @@ with open("src/python/version_template.h") as f:
 
 setup(
     ext_modules=[module1],
-    use_scm_version={
-        "local_scheme": "no-local-version",
-        "write_to": "src/python/version.h",
-        "write_to_template": version_template,
-    },
 )
