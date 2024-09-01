@@ -35,7 +35,6 @@ urls.Source = "https://github.com/ultrajson/ultrajson"
 
 [tool.setuptools]
 platforms = [ "any" ]
-license-files = [ "LICENSE.txt" ]
 include-package-data = false
 
 [tool.setuptools_scm]
