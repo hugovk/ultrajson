@@ -39,10 +39,26 @@ repos:
       - id: trailing-whitespace
         exclude: "^.github/.*_TEMPLATE.md"
 
-  - repo: https://github.com/asottile/setup-cfg-fmt
-    rev: v2.5.0
+  - repo: https://github.com/python-jsonschema/check-jsonschema
+    rev: 0.29.2
     hooks:
-      - id: setup-cfg-fmt
-        args: [--include-version-classifiers, --max-py-version=3.13]
+      - id: check-github-workflows
+      - id: check-renovate
+
+  - repo: https://github.com/rhysd/actionlint
+    rev: v1.7.1
+    hooks:
+      - id: actionlint
+
+  - repo: https://github.com/tox-dev/pyproject-fmt
+    rev: 2.2.1
+    hooks:
+      - id: pyproject-fmt
+
+  - repo: https://github.com/abravalheri/validate-pyproject
+    rev: v0.19
+    hooks:
+      - id: validate-pyproject
+
 ci:
   autoupdate_schedule: quarterly
