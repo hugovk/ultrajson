@@ -1,6 +1,11 @@
 [build-system]
 requires = ["setuptools>=42", "setuptools_scm[toml]>=3.4"]
 
+[project]
+dynamic = [ "version" ]
+
+[tool.setuptools_scm]
+
 [tool.black]
 target_version = ["py38"]
 
