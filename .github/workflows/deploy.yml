@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - CIBW_BUILD_FRONTEND
   pull_request:
     paths:
       - ".github/workflows/deploy.yml"
