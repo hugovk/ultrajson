@@ -35,6 +35,8 @@ platforms = [ "any" ]
 license-files = [ "LICENSE.txt" ]
 include-package-data = false
 
+[tool.setuptools_scm]
+
 [tool.black]
 target_version = [ "py39" ]
 
