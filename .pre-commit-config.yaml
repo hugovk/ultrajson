@@ -44,11 +44,10 @@ repos:
     hooks:
       - id: zizmor
 
-  - repo: https://github.com/asottile/setup-cfg-fmt
-    rev: v2.8.0
+  - repo: https://github.com/tox-dev/pyproject-fmt
+    rev: v2.6.0
     hooks:
-      - id: setup-cfg-fmt
-        args: [--include-version-classifiers, --max-py-version=3.13]
+      - id: pyproject-fmt
 
   - repo: https://github.com/tox-dev/tox-ini-fmt
     rev: 1.5.0
