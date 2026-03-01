@@ -28,8 +28,6 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           allow-prereleases: true
-          cache: pip
-          cache-dependency-path: "setup.py"
 
       - name: Set PYTHON_GIL
         if: endsWith(matrix.python-version, 't')
