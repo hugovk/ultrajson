@@ -57,9 +57,8 @@ jobs:
           CIBW_ARCHS: ${{ matrix.cibw_arch }}
           # Include latest Python beta.
           CIBW_ENABLE: cpython-prerelease pypy graalpy
-          # Skip EOL Python versions and macOS x86_64 GraalPy, which times out
-          # during first-time interpreter discovery on GitHub Actions runners.
-          CIBW_SKIP: "gp311* gp*-macosx_x86_64"
+          # Skip EOL Python versions
+          CIBW_SKIP: "gp311*"
           # Run the test suite after each build.
           CIBW_TEST_REQUIRES: "pytest"
           CIBW_TEST_COMMAND: pytest {package}/tests
