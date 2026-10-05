@@ -67,7 +67,7 @@ jobs:
 
       # https://github.com/pypa/cibuildwheel
       - name: Build wheels
-        uses: pypa/cibuildwheel@e090b81e30c4d855ea63bf4b6e59204c09a101ae # v4.2.1
+        uses: pypa/cibuildwheel@adba99c781d3746d38b3a09b1cf797965bcb7fe6 # v4.3.0
         with:
           output-dir: dist
         # Options are supplied via environment variables:
@@ -84,7 +84,7 @@ jobs:
           # i686 has no manylinux_2_28 image, so it's always manylinux2014.
           CIBW_MANYLINUX_I686_IMAGE: manylinux2014
           CIBW_MANYLINUX_PYPY_I686_IMAGE: manylinux2014
-          # Include latest Python beta.
+          # Include latest Python beta, PyPy and GraalPy.
           CIBW_ENABLE: cpython-prerelease pypy graalpy
           # Skip EOL Python versions and macOS x86_64 GraalPy, which times out
           # during first-time interpreter discovery on GitHub Actions runners.
